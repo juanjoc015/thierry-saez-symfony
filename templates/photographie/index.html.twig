@@ -1,0 +1,33 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Page Photographie{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/pages/photographie/photographie.scss') }}">   
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ importmap('photographie') }}
+{% endblock %}
+
+{% block body %}
+    <div id="page-photographie">
+        {% for photo in photos %}
+            <div class="item">
+                <div class="container-photo">
+                    <img src="{{ photo.image | imagine_filter('photographies') }}" alt="">
+                    <div class="status {{ photo.status == 'available' ? 'available' : 'sold' }}"></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="imageModal" class="custom-modal">
+        <span class="close-modal" onclick="closeModal()"><i class="fas fa-times"></i></span>
+        <img id="modalImage" class="modal-content" src="" alt="Modal Image">
+        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+{% endblock %}

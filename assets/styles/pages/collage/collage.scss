@@ -1,0 +1,118 @@
+#page-collage {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 8rem;
+    margin-bottom: 8rem;
+
+    .item {
+        img {
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }
+        img:hover {
+            transform: scale(1) rotate(2deg);
+            
+        }  
+
+        .status {
+            margin-top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+        }
+
+        .available {
+            background-color: green;
+        }
+
+        .sold {
+            background-color: red;
+        }
+    }
+    .row-1 {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+        .item {
+            
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .row-2 {
+        display: flex;
+        justify-content: center;
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .row-3, .row-4 {
+        display: flex;
+        justify-content: space-around;
+        gap: 2rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .row-5, .row-6 {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #page-collage {
+        
+        .row-1 {
+            flex-direction: column;
+            gap: 8rem;
+
+            .item {
+                margin: 0 auto;
+                
+            }
+        }
+
+        .row-3, .row-4  {
+            flex-direction: column;
+            align-items: center;
+            gap: 8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #page-collage {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    #page-collage {
+        gap: 4rem;
+
+        .row-1 {
+            gap: 4rem;
+        }
+        .row-3, .row-4 {
+            gap: 4rem;
+        }
+    }
+}

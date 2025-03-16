@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/pages/home/home.scss') }}">
+
+{% endblock %}
+
+{% block body %}
+    <div id="page-home">
+        <p>" Il n’est pas de présence plus forte que l’oeuvre unique "</p>
+        <div class="continer-nouveautes">
+            {% for index in [4, 2, 0] %}
+                <a href="{{ path('project_peinture_show', {'id': paintings[index].id}) }}">
+                    <img src="{{ paintings[index].image | imagine_filter('images_accueil') }}" alt="">
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

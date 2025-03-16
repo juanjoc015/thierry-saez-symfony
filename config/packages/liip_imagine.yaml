@@ -1,0 +1,351 @@
+# Documentation on how to configure the bundle can be found at: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    # valid drivers options include "gd" or "gmagick" or "imagick"
+    driver: "gd"
+
+    twig:
+      mode: 'lazy'
+
+    resolvers:
+        default:
+            web_path:
+                web_root: '%kernel.project_dir%/public'
+                cache_prefix: /media/cache
+
+    filter_sets:
+      default:  # Configuración global
+            quality: 85
+            jpeg_quality: 85
+            png_compression_level: 6
+            png_compression_filter: 5
+            filters:
+                strip: true
+                auto_rotate: []
+      # PAGE ACCUEIL / HOME
+      # Filtre page Acueil (galerie)
+      images_accueil:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [500, 500]
+            mode: outbound
+
+
+      # PAGE PEINTURE
+      # filtres row 1 (3 images)
+      row1_left:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [529, 529]
+            mode: outbound
+
+      row1_center:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [542, 713]
+            mode: outbound
+
+      # filtre troisieme image
+      row1_right:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [476, 475]
+            mode: outbound
+
+      # filtre 4,6,8 (bigs images)
+      row234_left:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            # 1920x1080
+            size: [960, 717] 
+            mode: outbound
+
+      # filtre 5,7,9 (smalls images)
+      row234_right:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [650, 646]
+            mode: outbound
+
+      # filtre 10, 11 (same-size images)
+      row5:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [700, 700]
+            mode: outbound
+
+      # filtre 12 (big image)
+      row6:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [960, 786]
+            mode: outbound
+
+      # filtre 13 (big image)
+      row7:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [1600, 797]
+            mode: outbound
+
+      # PAGE SHOW ( Filtres individuels, pour chaque image)
+      # filtre leave the door open, smoke gets in your eyes
+      rectangle:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [816, 601]
+            mode: outbound
+
+      fruit_defendus:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [476, 475]
+            mode: outbound
+
+      # filtre red bird
+      red_bird:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [485, 638]
+            mode: outbound
+
+      # filtre diversity et gold fish (80 x 80)
+      square:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [503, 503]
+            mode: outbound
+
+      # filtre love is everywhere, Play with me, For kids only (1m x 1m)
+      big_square:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [550, 550]
+            mode: outbound
+
+       # filtre Vol de Nuit
+      vol_de_nuit:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [768, 628]
+            mode: outbound
+
+      # filtre The Beast
+      the_beast:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [1061, 529]
+            mode: outbound
+
+
+      # PAGE COLLAGE
+
+      row6_collage:
+        cache: default
+        quality: 90
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [600, 600]
+            mode: outbound  
+
+       # filtre diversity et gold fish (80 x 80)
+      row123_collage:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [600, 600]
+            mode: outbound  
+
+      row4_right_collage:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [600, 600]
+            mode: outbound  
+
+       # filtre diversity et gold fish (80 x 80)
+      big_square_collage:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [800, 800]
+            mode: outbound 
+
+       # filtre diversity et gold fish (80 x 80)
+      row5_collage:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [941, 1152]
+            mode: outbound 
+
+       # filtre diversity et gold fish (80 x 80)
+      row4_left_collage:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [480, 480]
+            mode: outbound 
+
+      urban_with_me:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [480, 480]
+            mode: outbound 
+      
+
+      
+       # filtre diversity et gold fish (80 x 80)
+      hope:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [555, 679]
+            mode: outbound 
+
+
+      # Filtro general para el modal
+      modal_large:
+        cache: default
+        quality: 90
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:  
+            size: [1200, 880]
+            mode: inset  # Ancho máximo 1200, altura automática
+
+      #PAGE PHOTOGRAPHIE
+      photographies:
+        cache: default
+        quality: 90
+        format: jpeg
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [750, 750]
+            mode: inset
+
+
+      #PAGE APROPOS
+      apropos:
+        cache: default
+        quality: 90
+        format: png
+        filters:
+          auto_rotate: ~
+          strip: ~
+          thumbnail:
+            size: [350, 350]
+            mode: inset

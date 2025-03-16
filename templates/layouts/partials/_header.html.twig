@@ -1,0 +1,28 @@
+<header class="header">
+	<div class="logo-header">
+		<a href="{{ path('home') }}">
+			<img src="{{ asset('img/logo.png')}}">
+		</a>
+	</div>
+
+	<nav id="navbar">
+		<div id="icons">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+		<ul class="menu">
+			<li class="{{ app.request.attributes.get('_route') in ['peinture', 'project_peinture_show'] ? 'current' : '' }}">
+				<a href="{{ path('peinture') }}" class="nav-item">Peinture</a>
+			</li>
+			<li class="{{ app.request.attributes.get('_route') in ['collage', 'project_collage_show'] ? 'current' : '' }}">
+				<a href="{{ path('collage') }}" class="nav-item">Collage / Assemblage</a>
+			</li>
+			<li class="{{ app.request.attributes.get('_route') matches '/^photographie/' ? 'current' : '' }}">
+				<a href="{{ path('photographie') }}">Photographie</a>
+			</li>
+			<li class="{{ app.request.attributes.get('_route') matches '/^apropos/' ? 'current' : '' }}">
+				<a href="{{ path('apropos') }}">À propos</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
