@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}{{ painting.title }}{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/pages/peinture-collage.scss') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ importmap('peinture-collage') }}
+{% endblock %}
+
+{% block body %}
+    <div id="item-peinture">
+        <div class="image-container">  {# Cambiado de "container" a "image-container" #}
+            <div class="image-wrapper">  {# Añadido para agrupar las imágenes #}
+                <img id="base-image" src="{{ asset(painting.image) | imagine_filter(painting.filter) }}" alt="{{ painting.title }}" class="open-modal image-style" data-original-src="{{ asset(painting.image) | imagine_filter('modal_large') }}">
+                {% if painting.scenario is not null %}
+                    <img id="situacion-image" class="open-modal image-style" src="{{ asset(painting.scenario) | imagine_filter(painting.filter) }}" alt="{{ painting.title }}" data-original-src="{{ asset(painting.scenario) | imagine_filter('modal_large') }}">
+                {% endif %}
+            </div>
+            {% if painting.status == 'available' and painting.scenario %}
+                <div class="situacion">
+                    <a id="show-situacion" class="btn-situacion"><i class="fa-regular fa-circle-right"></i></a>
+                </div>
+            {% endif %}
+        </div>
+            <div class="description">
+                <h3>{{ painting.title }}</h3>
+                <p>{{ painting.dimensions }} cm</p>
+                <p>{{ painting.technique }}</p>
+                <p>{{ painting.price ? painting.price|format_currency('EUR', {fraction_digit: 0}) : '' }}</p>
+            </div>        
+    </div>
+
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <span class="close-modal"><i class="fas fa-times"></i></span>
+        <img id="fullscreenImage" class="modal-content" src="" alt="Fullscreen Image">
+    </div>
+{% endblock %}

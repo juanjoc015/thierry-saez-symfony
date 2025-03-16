@@ -1,0 +1,80 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Page Collage / Assemblage{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/pages/collage/collage.scss') }}">
+{% endblock %}
+
+{% block body %}
+	<div id="page-collage">
+		<div class="row-1">
+			<div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[0].id}) }}">
+					<img src="{{ paintings[0].image | imagine_filter('row123_collage') }}" alt="{{ paintings[0].title }}">
+				</a>
+				<div class="status {{ paintings[0].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+			<div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[1].id}) }}">
+					<img src="{{ paintings[1].image | imagine_filter('row123_collage') }}" alt="{{ paintings[1].title }}">
+				</a>
+				<div class="status {{ paintings[1].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+		</div>
+		<div class="row-2">
+            <div class="item">
+                <a href="{{ path('project_collage_show', {'id': paintings[2].id}) }}">
+                    <img src="{{ paintings[2].image | imagine_filter('row123_collage') }}" alt="{{ paintings[2].title }}">
+                </a>
+                <div class="status {{ paintings[2].status == 'available' ? 'available' : 'sold' }}"></div>
+            </div>
+		</div>
+        <div class="row-3">
+            <div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[3].id}) }}">
+					<img src="{{ paintings[3].image | imagine_filter('row123_collage') }}" alt="{{ paintings[3].title }}">
+				</a>
+				<div class="status {{ paintings[3].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+			<div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[4].id}) }}">
+					<img src="{{ paintings[4].image | imagine_filter('row123_collage') }}" alt="{{ paintings[4].title }}">
+				</a>
+				<div class="status {{ paintings[4].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+        </div>
+        <div class="row-4">
+            <div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[5].id}) }}">
+					<img src="{{ paintings[5].image | imagine_filter('row4_left_collage') }}" alt="{{ paintings[5].title }}">
+				</a>
+				<div class="status {{ paintings[5].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+			<div class="item">
+				<a href="{{ path('project_collage_show', {'id': paintings[6].id}) }}">
+					<img src="{{ paintings[6].image | imagine_filter('row4_right_collage') }}" alt="{{ paintings[6].title }}">
+				</a>
+				<div class="status {{ paintings[6].status == 'available' ? 'available' : 'sold' }}"></div>
+			</div>
+        </div>
+        <div class="row-5">
+            <div class="item">
+                <a href="{{ path('project_collage_show', {'id': paintings[7].id}) }}">
+					<img src="{{ paintings[7].image | imagine_filter('row5_collage') }}" alt="{{ paintings[7].title }}">
+				</a>
+				<div class="status {{ paintings[7].status == 'available' ? 'available' : 'sold' }}"></div>
+            </div>
+        
+        </div>
+        <div class="row-6">
+            <div class="item">
+                <a href="{{ path('project_collage_show', {'id': paintings[8].id}) }}">
+					<img src="{{ paintings[8].image | imagine_filter('row6_collage') }}" alt="{{ paintings[8].title }}">
+				</a>
+				<div class="status {{ paintings[8].status == 'available' ? 'available' : 'sold' }}"></div>
+            </div>
+        </div>
+	</div>
+{% endblock %}
+

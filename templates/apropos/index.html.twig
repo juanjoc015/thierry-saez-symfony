@@ -1,0 +1,40 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Page Apropos{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/pages/apropos/apropos.scss') }}">
+{% endblock %}
+
+{% block body %}
+<div id="page-apropos">
+	<div class="photo">
+		<img src="{{ asset('upload/apropos/photo-thierry.png') | imagine_filter('apropos') }}" alt="">
+	</div>
+	<div class="text-container">
+		<p class="slogan">" Il n’est pas de présence plus forte que l’œuvre unique "</p>
+		<div class="description">
+			<p>Thierry Saez né en 1959</p>
+			<p>Français d’origine hispano-slave</p>
+			<p>Artiste peintre – Ateliers Paris et Corrèze</p>
+			<p>Entrepreneur - Manager</p>
+			<p>Architecte d’intérieur diplômé de l’école nationale du bâtiment - ENDB</p>
+		</div>
+		<div class="big-text1">
+			<h3>RENAISSANCE :</h3>
+			<p>Une nuit des tous premiers jours de l’été 2002, résidant dans une bastide du sud de la France, mon sommeil fut interrompu par l’activité nocturne néanmoins bruyante de quelques rongeurs nichés au grenier juste au-dessus de nos têtes. Passés ces quelques moments d’inquiétude, mon état d’éveil l’emporta sur mon désir de me rendormir à l’entière indifférence des hôtes de la bâtisse. Conscient de vivre ces instants d’une tranche de vie n’appartenant qu’à moi seul, déjà le café noir fumant, que pinceaux, couleurs qui me tendaient les bras depuis mon arrivée s’offrent à moi laissant exprimer sur le papier ma force créative ; ma première série « Sommeil d’Afrique » était née. J’ai compris immédiatement que cette rencontre était formidable et aussi porteuse d’évasion et de liberté.</p>
+			<p>Ma première exposition de dessins trente années plus tôt dans le Marais, des tests de personnalité lors de mon parcours professionnel soulignant inexorablement : énergie, créativité et leadership comme refrain de ma personnalité au fil du temps qui passe constituait-il la source de ce besoin d’expression ? Le moment de vivre ma passion était arrivé, quelle merveilleuse récompense</p>
+			<p>Six mois plus tard, vingt-cinq réalisations artistiques remplissent ma vie et … mes murs. Instinctivement à chaque regard vers elles l’idée de m’en séparer me pétrifiait, comme un père voyant son enfant quitter le berceau familial. Dans le même temps mes constructions, ma recherche de l’équilibre, mes harmonies de couleurs, mon sens de l’esthétisme et ma créativité produisent un effet de surprise et d’émotion sur les quelques curieux qui franchissent ma porte. Les compliments abondent en même temps que les toutes premières demandes d’acquisitions me sont adressées.</p>
+			<p>La probable peur du regard des autres sur mes réalisations s’estompe, je cède ma première toile et mon capital confiance prend des ailes. J’organise mon premier vernissage au sein d’une agence parisienne d’architectes décorateurs, je visite galeries d’art, musées, expositions et dévore revues et livres d’art sans doute pour rasséréner les quelques moments d’inquiétude à l’approche du 13 mars 2003, ma soirée.</p>
+		</div>
+		<div class="big-text2">
+			<h3>EN MEME TEMPS … MA VIE PROFESSIONNELLE CONTINUE :</h3>
+			<p>Le management en entreprise et la démarche artistique semblent, à première vue, appartenir à des mondes distincts. Selon moi, ces deux domaines partagent des dynamiques communes et peuvent s'enrichir mutuellement. L'innovation, la créativité et la gestion de l'incertitude sont autant de principes qui s'appliquent tant aux artistes qu'aux managers. Partie prenante dans ces deux domaines, je témoigne aujourd’hui des analogies animées d’une démarche intellectuelle commune.</p>
+			<p>Dans l’entreprise, le management consiste à organiser, coordonner et animer une équipe afin d'atteindre des objectifs stratégiques. Or, cette mission ne peut se réduire à des processus strictement rationnels et prévisibles. Comme un artiste qui compose une œuvre, un manager doit faire preuve d'intuition, d'adaptabilité et de sens de l'observation. Il doit également créer un environnement propice à l'expression des talents et à l'émergence d'idées nouvelles.</p>
+			<p>Tenue par la permanente recherche pour la construction d’un équilibre nouveau, un rapport harmonieux entre les formes, la composition, les couleurs et le message : autant d’éléments au service de la promesse esthétique de l’artiste.</p>
+			<p>Enfin, l'art comme le management doivent composer avec l'incertitude. L'artiste, en explorant de nouvelles voies, prend le risque de l'inconnu et de l'expérimentation. De la même manière, un manager doit accepter l'imprévu et savoir rebondir, transformant les obstacles en opportunités.</p>
+		
+		</div>
+	</div>
+</div>
+{% endblock %}

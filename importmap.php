@@ -25,4 +25,12 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'photographie' => [
+        'path' => './assets/js/pages/photographie/photographie.js',
+        'entrypoint' => true,
+    ],
+    'peinture-collage' => [
+        'path' => './assets/js/pages/peinture-collage/peinture-collage.js',
+        'entrypoint' => true,
+    ],
 ];

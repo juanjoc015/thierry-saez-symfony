@@ -1,0 +1,133 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Page Peinture
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('styles/pages/peinture/peinture.scss') }}">
+{% endblock %}
+
+{% block body %}
+	<div id="page-peinture">
+		<!-- Fila 1 -->
+		<div class="row-1">
+				<div class="item">
+					<div class="container-img-row-1">
+						<a href="{{ path('project_peinture_show', {'id': paintings[0].id}) }}">
+							<img src="{{ paintings[0].image | imagine_filter('row1_left') }}" alt="{{ paintings[0].title }}">
+						</a>
+						<div class="status {{ paintings[0].status == 'available' ? 'available' : 'sold' }}"></div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="container-img-row-1">
+						<a href="{{ path('project_peinture_show', {'id': paintings[1].id}) }}">
+							<img src="{{ paintings[1].image | imagine_filter('row1_center') }}" alt="{{ paintings[1].title }}">
+						</a>
+						<div class="status {{ paintings[1].status == 'available' ? 'available' : 'sold' }}"></div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="container-img-row-1">
+						<a href="{{ path('project_peinture_show', {'id': paintings[2].id}) }}">
+							<img src="{{ paintings[2].image | imagine_filter('row1_right') }}" alt="{{ paintings[2].title }}">
+						</a>
+						<div class="status {{ paintings[2].status == 'available' ? 'available' : 'sold' }}"></div>
+					</div>
+				</div>
+		</div>
+
+		<!-- Fila 2 -->
+		<div class="row-2-3-4">
+				<div class="item peinture-bigone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[3].id}) }}">
+						<img src="{{ paintings[3].image | imagine_filter('row234_left') }}" alt="{{ paintings[3].title }}">
+					</a>
+					<div class="status {{ paintings[3].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+
+				<div class="item peinture-smallone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[4].id}) }}">
+						<img src="{{ paintings[4].image | imagine_filter('row234_right') }}" alt="{{ paintings[4].title }}">
+					</a>
+					<div class="status {{ paintings[4].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+
+		<!-- Fila 3 -->
+		<div class="row-2-3-4">
+				<div class="item peinture-bigone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[5].id}) }}">
+						<img src="{{ paintings[5].image | imagine_filter('row234_left') }}" alt="{{ paintings[5].title }}">
+					</a>
+					<div class="status {{ paintings[5].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+
+				<div class="item peinture-smallone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[6].id}) }}">
+						<img src="{{ paintings[6].image | imagine_filter('row234_right') }}" alt="{{ paintings[6].title }}">
+					</a>
+					<div class="status {{ paintings[6].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+
+		<!-- Fila 4 -->
+		<div class="row-2-3-4">
+				<div class="item peinture-bigone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[7].id}) }}">
+						<img src="{{ paintings[7].image | imagine_filter('row234_left') }}" alt="{{ paintings[7].title }}">
+					</a>
+					<div class="status {{ paintings[7].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+
+				<div class="item peinture-smallone">
+					<a href="{{ path('project_peinture_show', {'id': paintings[8].id}) }}">
+						<img src="{{ paintings[8].image | imagine_filter('row234_right') }}" alt="{{ paintings[8].title }}">
+					</a>
+					<div class="status {{ paintings[8].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+
+		<!-- Fila 5 -->
+		<div class="row-5">
+				<div class="item row-5-item">
+					<a href="{{ path('project_peinture_show', {'id': paintings[9].id}) }}">
+						<img src="{{ paintings[9].image | imagine_filter('row5') }}" alt="{{ paintings[9].title }}">
+					</a>
+					<div class="status {{ paintings[9].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+
+				<div class="item row-5-item">
+					<a href="{{ path('project_peinture_show', {'id': paintings[10].id}) }}">
+						<img src="{{ paintings[10].image | imagine_filter('row5') }}" alt="{{ paintings[10].title }}">
+					</a>
+					<div class="status {{ paintings[10].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+
+		<!-- Fila 6 -->
+		<div class="row-6">
+				<div class="item">
+					<a href="{{ path('project_peinture_show', {'id': paintings[11].id}) }}">
+						<img src="{{ paintings[11].image | imagine_filter('row6') }}" alt="{{ paintings[11].title }}">
+					</a>
+					<div class="status {{ paintings[11].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+
+		<!-- Fila 7 -->
+		<div class="row-7">
+				<div class="item">
+					<a href="{{ path('project_peinture_show', {'id': paintings[12].id}) }}">
+						<img src="{{ paintings[12].image | imagine_filter('row7') }}" alt="{{ paintings[12].title }}">
+					</a>
+					<div class="status {{ paintings[12].status == 'available' ? 'available' : 'sold' }}"></div>
+				</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,192 @@
+@import '/../projects/base_peinture.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#page-peinture {
+    padding: 1rem 2rem;
+
+    /* Estilos globales para el cuadrado de todos los contenedores de la pagina */
+    .item {    
+        
+        img {
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }     
+        img:hover {
+            transform: scale(1) rotate(2deg);
+            
+        }   
+        
+        .status {
+            margin-top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            border: 1px solid black;
+        }
+
+        .available {
+            background-color: green;
+        }
+
+        .sold {
+            background-color: red;
+        }
+    }
+
+    /* Estilos para la linea 1 */
+    .row-1 {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 0.9fr;
+        grid-gap: 2rem;
+        margin-bottom: 5rem;
+    
+        .container-img-row-1 {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0 auto;    
+            
+            img {
+                width: 100%;
+                max-width: 529px;
+                height: auto;
+            }
+        }
+    }
+    /* Estilos para las lineas 2-3-4 */
+    .row-2-3-4 {
+        display: flex;    
+        justify-content: space-between;
+        gap: 4rem;
+    
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+        }
+        .peinture-bigone {
+            img {
+                width: 100%;
+                max-width: 960px;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+    
+        .peinture-smallone {            
+            img {
+                display: block;
+                width: 100%;
+                max-width: 650px;
+                max-height: 646px;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    /* Estilos para la linea 5 */
+    .row-5 {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 5rem;
+        gap: 4rem;
+
+        .row-5-item {            
+            img {
+                width: 100%;
+                max-width: 700px;
+                height: auto;
+            }
+        }
+    }
+
+    /* Estilos para la linea 6 */
+    .row-6 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+
+        img {
+            width: 100%;
+            max-width: 960px;
+            height: auto;
+        }
+    }
+
+    /* Estilos para la linea 7 */
+    .row-7 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+
+        img {
+            width: 100%;
+            max-width: 1600px;
+            height: auto;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 900px) {
+    #page-peinture {
+
+        /* Estilos para la linea 1 */
+        .row-1 {
+            grid-template-columns: 1fr;
+            row-gap: 5rem;
+
+            .container-img-row-1 {
+                max-width: fit-content;
+            }
+        }
+        
+        /* Estilos para las lineas 2-3-4 */
+        .row-2-3-4 {
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+            
+            .peinture-bigone {
+                margin-bottom: 0;
+            }
+            .peinture-smallone {
+                margin-bottom: 5rem;
+            }
+        }
+
+        /* Estilos para la linea 5 */
+        .row-5 {
+            flex-direction: column;
+            gap: 5rem;
+
+            .row-5-item {
+                max-width: fit-content;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #page-peinture {
+        padding: 1rem;
+
+        /* Estilos para la linea 1 */
+        .row-1 {
+            .container-img-row-1 {
+                width: 100%;
+            }
+        }
+    }
+}

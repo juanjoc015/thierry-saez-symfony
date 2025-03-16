@@ -1,0 +1,32 @@
+services:
+  database:
+    image: mysql:8.0
+    container_name: thierry_database
+    restart: always
+    ports:
+      - 7800:3306
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}  
+      MYSQL_DATABASE: ${MYSQL_DATABASE}   
+    volumes:
+      - database_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: thierry_phpmyadmin
+    ports:
+      - 7801:80
+    depends_on:
+      - database
+    environment:
+      PMA_HOST: database
+      PMA_USER: root
+      PMA_PASSWORD: thierry
+      PHP_INI_UPLOAD_MAX_FILESIZE: 100M
+      PHP_INI_POST_MAX_SIZE: 100M
+      UPLOAD_LIMIT: 2048M
+    restart: always
+
+volumes:
+  database_data:

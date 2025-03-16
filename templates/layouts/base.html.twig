@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Accueil{% endblock %}</title>
+        <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Bebas+Neue&display=swap">
+        <script src="https://kit.fontawesome.com/ee85ac6e61.js" crossorigin="anonymous"></script>
+
+        {% block javascripts %}
+            {{ importmap('app') }}
+        {% endblock %}
+
+        {% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+            {% include 'layouts/partials/_header.html.twig' %}
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+
+        {% block footer %}
+            {#{% include 'layouts/partials/_footer.html.twig' %}#}
+        {% endblock %}
+    </body>
+</html>
